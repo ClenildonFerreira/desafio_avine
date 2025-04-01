@@ -52,5 +52,14 @@ namespace TaskManagerApi.Repositories
             return await _context.Tasks
                 .AnyAsync(t => EF.Functions.Like(t.Title, title));
         }
+
+        public async Task<List<TaskItem>> GetTasksPaged(int page, int pageSize)
+        {
+            return await _context.Tasks
+                .Skip((page - 1) * pageSize)  
+                .Take(pageSize)             
+                .ToListAsync();
+        }
+
     }
 }
