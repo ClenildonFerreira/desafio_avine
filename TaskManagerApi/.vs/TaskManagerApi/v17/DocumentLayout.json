@@ -38,8 +38,7 @@
               "RelativeToolTip": "TaskManagerApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T16:39:54.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T16:39:54.664Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "TaskManagerApi\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-01T16:39:51.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T16:39:51.217Z"
             },
             {
               "$type": "Document",
@@ -64,8 +62,7 @@
               "RelativeToolTip": "TaskManagerApi\\Repositories\\TaskRepository.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAcwDsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T16:37:12.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T16:37:12.74Z"
             },
             {
               "$type": "Document",
@@ -75,7 +72,7 @@
               "RelativeDocumentMoniker": "TaskManagerApi\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Controllers\\TaskController.cs",
               "RelativeToolTip": "TaskManagerApi\\Controllers\\TaskController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowGsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T14:59:07.445Z",
               "EditorCaption": ""
