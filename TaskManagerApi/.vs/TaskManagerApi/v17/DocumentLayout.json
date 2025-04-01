@@ -1,12 +1,135 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|c:\\developer\\project\\desafio_avine\\taskmanagerapi\\taskmanagerapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{45F1F767-124D-4CE5-A855-DD6028776E03}|TaskManagerApi\\TaskManagerApi.csproj|solutionrelative:taskmanagerapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "TaskManagerApi\\Controllers\\TaskController.cs",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "TaskManagerApi\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAADwv0MAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:59:07.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskRepository.cs",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Repositories\\TaskRepository.cs",
+              "RelativeDocumentMoniker": "TaskManagerApi\\Repositories\\TaskRepository.cs",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Repositories\\TaskRepository.cs",
+              "RelativeToolTip": "TaskManagerApi\\Repositories\\TaskRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAcwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:54:37.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\appsettings.json",
+              "RelativeDocumentMoniker": "TaskManagerApi\\appsettings.json",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\appsettings.json",
+              "RelativeToolTip": "TaskManagerApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-01T14:33:27.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Program.cs",
+              "RelativeDocumentMoniker": "TaskManagerApi\\Program.cs",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Program.cs",
+              "RelativeToolTip": "TaskManagerApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:36:02.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "TaskManagerApi\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "TaskManagerApi\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:34:21.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Models\\TaskItem.cs",
+              "RelativeDocumentMoniker": "TaskManagerApi\\Models\\TaskItem.cs",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\Models\\TaskItem.cs",
+              "RelativeToolTip": "TaskManagerApi\\Models\\TaskItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:29:46.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "TaskManagerApi\\appsettings.Development.json",
+              "ToolTip": "C:\\developer\\project\\desafio_avine\\TaskManagerApi\\TaskManagerApi\\appsettings.Development.json",
+              "RelativeToolTip": "TaskManagerApi\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-01T13:47:01.883Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
