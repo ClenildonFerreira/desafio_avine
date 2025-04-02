@@ -2,13 +2,11 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 const AddTask = () => {
   return (
-    <div>
-        <button
-        className='btn btn-primary w-full'
-        >Add nova tarefa 
-        <AiOutlinePlus className='ml-2' size={18} />
-      </button>
-    </div>
+    <button 
+        className='bg-[#af7eea] flex flex-row w-24 py-2 rounded-md 
+        justify-center text-white shadow-md' >
+      New task
+    </button>
   );
 };
 
