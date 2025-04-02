@@ -7,10 +7,10 @@ import EditTaskModal from "./EditTaskModal";
 import DeleteConfirmModal from "./DeleteConfirmModal";
 import { useEditTodo } from "@/hooks/useEditTodo";
 import { useDeleteTodo } from "@/hooks/useDeleteTodo";
-import { useGetTodos } from "@/hooks/useGetTodos";
+import { useTodoContext } from "@/app/context/TodoContext";
 
 const TodoList: React.FC = () => {
-  const { tasks, loading, error, refetch } = useGetTodos();
+  const { tasks, loading, error, refetch } = useTodoContext();
 
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -37,7 +37,7 @@ const TodoList: React.FC = () => {
 
   const handleConfirmDelete = async (id: number) => {
     await handleDeleteTodo(id);
-    refetch(); 
+    refetch();
     setDeleteModalOpen(false);
   };
 

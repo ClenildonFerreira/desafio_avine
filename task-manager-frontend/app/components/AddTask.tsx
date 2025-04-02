@@ -4,13 +4,11 @@ import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
 import { useAddTodo } from "@/hooks/useAddTodo";
+import { useTodoContext } from "@/app/context/TodoContext";
 
-interface AddTaskProps {
-  refetch: () => void;
-}
-
-const AddTask: React.FC<AddTaskProps> = ({ refetch }) => {
+const AddTask = () => {
   const { handleAddTodo, loading, error } = useAddTodo();
+  const { refetch } = useTodoContext();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -21,7 +19,6 @@ const AddTask: React.FC<AddTaskProps> = ({ refetch }) => {
 
   const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-
     setFormError(null);
 
     const selectedDate = new Date(dueDate);
@@ -48,16 +45,13 @@ const AddTask: React.FC<AddTaskProps> = ({ refetch }) => {
       setDueDate("");
       setIsCompleted(false);
       setModalOpen(false);
-      refetch(); // 🔄 atualiza a lista de tarefas após salvar
+      refetch();
     }
   };
 
   return (
     <div>
-      <button
-        onClick={() => setModalOpen(true)}
-        className="btn btn-primary w-full"
-      >
+      <button onClick={() => setModalOpen(true)} className="btn btn-primary w-full">
         Adicionar nova tarefa <AiOutlinePlus className="ml-2" size={18} />
       </button>
 
