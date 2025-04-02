@@ -2,7 +2,7 @@
 
 Aplicação web full stack para gerenciamento de tarefas desenvolvida como parte de um desafio técnico para vaga de Desenvolvedor Júnior na Avine.
 
-🎥 **Demonstração em vídeo**: [Assista no YouTube](https://youtu.be/XZ-5vB3d7jU)
+🎥 **Demonstração em vídeo**: <a href="https://youtu.be/XZ-5vB3d7jU" target="_blank">Assista no YouTube</a>
 
 ## 🚀 Tecnologias Utilizadas
 
