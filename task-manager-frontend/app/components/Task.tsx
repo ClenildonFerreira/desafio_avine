@@ -3,9 +3,11 @@ import { ITask } from "@/types/task";
 
 interface TaskProps {
   task: ITask;
+  onEdit?: (task: ITask) => void;
+  onDelete?: (task: ITask) => void;
 }
 
-const Task: React.FC<TaskProps> = ({ task }) => {
+const Task: React.FC<TaskProps> = ({ task, onEdit, onDelete }) => {
   const formatDate = (date: string) => {
     const d = new Date(date);
     return d.toLocaleDateString("pt-BR", {
@@ -29,8 +31,21 @@ const Task: React.FC<TaskProps> = ({ task }) => {
           {task.isCompleted ? "Concluída" : "Pendente"}
         </span>
       </td>
-      <td className="text-center">
-        {/* Aqui vão os botões de editar/deletar depois */}
+      <td className="text-center flex justify-center gap-2">
+        <button
+          onClick={() => onEdit?.(task)}
+          className="btn btn-sm btn-outline btn-warning"
+          title="Editar"
+        >
+          ✏️
+        </button>
+        <button
+          onClick={() => onDelete?.(task)}
+          className="btn btn-sm btn-outline btn-error"
+          title="Excluir"
+        >
+          🗑️
+        </button>
       </td>
     </tr>
   );

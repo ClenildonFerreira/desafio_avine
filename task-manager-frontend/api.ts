@@ -5,11 +5,15 @@ const baseUrl = "http://localhost:14276/api";
 
 export const getAllTodos = async (): Promise<ITask[]> => {
   try {
-    const res = await axios.get(`${baseUrl}/Task`);
+    const res = await axios.get(`${baseUrl}/Task?t=${Date.now()}`, {
+      headers: {
+        "Cache-Control": "no-cache",
+      },
+    });
     return res.data;
   } catch (error) {
     const err = error as AxiosError;
-    console.error('Erro ao buscar a tarefas:', err.message);
+    console.error('Erro ao buscar as tarefas:', err.message);
     return [];
   }
 };
@@ -44,5 +48,26 @@ export const addTodo = async (task: CreateTaskDTO): Promise<ITask | null> => {
     const err = error as AxiosError;
     console.error("Erro na requisição:", err.message);
     return null;
+  }
+};
+
+export const editTodo = async (task: ITask): Promise<ITask | null> => {
+  try {
+    const res = await axios.patch(`${baseUrl}/Task/${task.id}`, task);
+    return res.data;
+  } catch (err) {
+    console.error("Erro ao editar:", err);
+    return null;
+  }
+};
+
+
+export const deleteTodo = async (id: number): Promise<boolean> => {
+  try {
+    await axios.delete(`${baseUrl}/Task/${id}`);
+    return true;
+  } catch (err) {
+    console.error("Erro ao deletar:", (err as AxiosError).message);
+    return false;
   }
 };
