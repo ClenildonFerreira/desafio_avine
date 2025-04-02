@@ -2,6 +2,8 @@
 
 Aplicação web full stack para gerenciamento de tarefas desenvolvida como parte de um desafio técnico para vaga de Desenvolvedor Júnior na Avine.
 
+🎥 **Demonstração em vídeo**: [Assista no YouTube](https://youtu.be/XZ-5vB3d7jU)
+
 ## 🚀 Tecnologias Utilizadas
 
 ### Front-End (ReactJS + Next.js)
@@ -127,3 +129,4 @@ TaskManagerApi/
 ---
 
 Desenvolvido por **Clenildon Ferreira** — 2025 💻
+
