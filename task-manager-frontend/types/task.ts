@@ -1,7 +1,9 @@
 export interface ITask {
-    id: string;
+    id: number;
     title: string;
     description: string;
     dueDate: string;
-    completed: boolean;
+    isCompleted: boolean;
   }
+
+  export type CreateTaskDTO = Omit<ITask, "id">;

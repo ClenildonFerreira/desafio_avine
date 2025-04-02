@@ -3,37 +3,54 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
-import { addTodo } from "@/api";
 import { useRouter } from "next/navigation";
-import { v4 as uuidv4 } from "uuid";
+import { useAddTodo } from "@/hooks/useAddTodo";
 
 const AddTask = () => {
   const router = useRouter();
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [title, setTitle] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [dueDate, setDueDate] = useState<string>("");
-  const [completed, setCompleted] = useState<boolean>(false);
+  const { handleAddTodo, loading, error } = useAddTodo();
+
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-
-    await addTodo({
-      id: uuidv4(),
+    
+    setFormError(null); // limpa erro ao enviar certo
+  
+    const selectedDate = new Date(dueDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); 
+  
+    if (selectedDate < today) {
+      setFormError("Não é possível agendar tarefas com data de hoje ou anterior.");
+      return;
+    }
+  
+    const dueDateUtc = new Date(`${dueDate}T23:59:59`).toISOString();
+  
+    const result = await handleAddTodo({
       title,
       description,
-      dueDate,
-      completed,
+      dueDate: dueDateUtc,
+      isCompleted,
     });
-
-    setTitle("");
-    setDescription("");
-    setDueDate("");
-    setCompleted(false);
-    setModalOpen(false);
-
-    router.refresh();
+  
+    if (result) {
+      setTitle("");
+      setDescription("");
+      setDueDate("");
+      setIsCompleted(false);
+      setModalOpen(false);
+      router.refresh();
+    }
   };
+  
 
   return (
     <div>
@@ -54,30 +71,40 @@ const AddTask = () => {
               type="text"
               placeholder="Título da tarefa"
               className="input input-bordered w-full"
+              required
             />
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Descrição da tarefa"
               className="input input-bordered w-full my-2"
+              required
             />
-            <input
-              value={dueDate}
-              onChange={(e) => setDueDate(e.target.value)}
-              type="date"
-              className="input input-bordered w-full my-2"
-            />
+          <input
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            type="date"
+            className="input input-bordered w-full my-2"
+            min={new Date().toISOString().split("T")[0]} 
+            required
+          />
+
             <label>
               Concluída:
               <input
                 type="checkbox"
-                checked={completed}
-                onChange={() => setCompleted(!completed)}
+                checked={isCompleted}
+                onChange={() => setIsCompleted(!isCompleted)}
                 className="checkbox ml-2"
               />
             </label>
-            <button type="submit" className="btn btn-secondary mt-4">
-              Enviar
+
+            {error && <p className="text-red-500">{error}</p>}
+            {formError && <p className="text-red-500 text-sm">{formError}</p>}
+
+
+            <button type="submit" className="btn btn-secondary mt-4" disabled={loading}>
+              {loading ? "Enviando..." : "Enviar"}
             </button>
           </div>
         </form>

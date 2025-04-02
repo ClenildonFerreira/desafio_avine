@@ -23,10 +23,10 @@ const Task: React.FC<TaskProps> = ({ task }) => {
       <td className="text-center">
         <span
           className={`badge ${
-            task.completed ? "badge-success" : "badge-warning"
+            task.isCompleted ? "badge-success" : "badge-warning"
           }`}
         >
-          {task.completed ? "Concluída" : "Pendente"}
+          {task.isCompleted ? "Concluída" : "Pendente"}
         </span>
       </td>
       <td className="text-center">
