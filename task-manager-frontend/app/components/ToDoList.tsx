@@ -8,6 +8,7 @@ import DeleteConfirmModal from "./DeleteConfirmModal";
 import { useEditTodo } from "@/hooks/useEditTodo";
 import { useDeleteTodo } from "@/hooks/useDeleteTodo";
 import { useTodoContext } from "@/app/context/TodoContext";
+import toast from "react-hot-toast";
 
 const TodoList: React.FC = () => {
   const { tasks, loading, error, refetch } = useTodoContext();
@@ -30,18 +31,36 @@ const TodoList: React.FC = () => {
   };
 
   const handleConfirmEdit = async (updatedTask: ITask) => {
-    await handleEditTodo(updatedTask);
+    await toast.promise(
+      handleEditTodo(updatedTask),
+      {
+        loading: "Salvando...",
+        success: "Tarefa atualizada!",
+        error: "Erro ao editar tarefa",
+      }
+    );
+    
     refetch();
     setEditModalOpen(false);
   };
 
   const handleConfirmDelete = async (id: number) => {
-    await handleDeleteTodo(id);
-    refetch();
-    setDeleteModalOpen(false);
+    const success = await handleDeleteTodo(id);
+    if (success) {
+      toast.success("Tarefa excluída com sucesso!");
+      refetch();
+      setDeleteModalOpen(false);
+    } else {
+      toast.error("Erro ao excluir tarefa.");
+    }
   };
 
-  if (loading) return <p className="text-center">Carregando tarefas...</p>;
+  if (loading) return (
+    <div className="flex justify-center items-center h-40">
+      <span className="loading loading-spinner text-primary"></span>
+    </div>
+  );
+
   if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (

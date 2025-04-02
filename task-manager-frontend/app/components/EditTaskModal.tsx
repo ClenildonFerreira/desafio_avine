@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, FormEventHandler } from "react";
 import Modal from "./Modal";
-import { ITask } from "@/types/task";
+import { ITask } from "@/types/task"
 
 interface EditTaskModalProps {
   task: ITask | null;
@@ -51,7 +51,7 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
       return;
     }
 
-    setFormError(null); // limpa erro se passou
+    setFormError(null);
 
     onSave({
       ...task,

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { TodoProvider } from "./context/TodoContext"; // 👈 importa o provider
+import { TodoProvider } from "./context/TodoContext";
+import { Toaster } from "react-hot-toast"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt_BR" data-theme="light">
+    <html lang="pt-BR" data-theme="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-base-100 min-h-screen`}
       >
         <TodoProvider>
           {children}
+          <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         </TodoProvider>
       </body>
     </html>

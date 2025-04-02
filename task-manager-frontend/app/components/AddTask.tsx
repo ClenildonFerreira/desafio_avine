@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
 import { useAddTodo } from "@/hooks/useAddTodo";
 import { useTodoContext } from "@/app/context/TodoContext";
+import toast from "react-hot-toast";
 
 const AddTask = () => {
   const { handleAddTodo, loading, error } = useAddTodo();
@@ -45,6 +46,7 @@ const AddTask = () => {
       setDueDate("");
       setIsCompleted(false);
       setModalOpen(false);
+      toast.success("Tarefa criada com sucesso!");
       refetch();
     }
   };
