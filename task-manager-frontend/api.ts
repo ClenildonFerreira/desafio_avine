@@ -2,6 +2,7 @@ import axios, { AxiosError } from 'axios';
 import { CreateTaskDTO, ITask } from "@/types/task";
 
 const baseUrl = "http://localhost:14276/api"; 
+type ErrorResponse = { message: string };
 
 export const getAllTodos = async (): Promise<ITask[]> => {
   try {
@@ -29,25 +30,38 @@ export const getTodoById = async (id: number): Promise<ITask | null> => {
   }
 };
 
-export const addTodo = async (task: CreateTaskDTO): Promise<ITask | null> => {
+export const addTodo = async (task: CreateTaskDTO): Promise<ITask | { error: string }> => {
   try {
-    const response = await axios.post<ITask>(`${baseUrl}/Task`, task, {
+    const response = await axios.post(`${baseUrl}/Task`, task, {
       headers: {
         "Content-Type": "application/json",
       },
-      validateStatus: (status) => status >= 200 && status < 500,
+      validateStatus: () => true,
     });
 
     if (response.status === 200 || response.status === 201) {
       return response.data;
-    } else {
-      console.error("Erro HTTP:", response.status, response.data);
-      return null;
     }
-  } catch (error) {
-    const err = error as AxiosError;
-    console.error("Erro na requisição:", err.message);
-    return null;
+
+    const data = response.data as ErrorResponse;
+
+    if (data && typeof data.message === "string") {
+      return { error: data.message };
+    }
+
+    return { error: `Erro HTTP: ${response.status}` };
+
+  } catch (err) {
+    const error = err as AxiosError<ErrorResponse>;
+
+    if (
+      error.response?.data?.message &&
+      typeof error.response.data.message === "string"
+    ) {
+      return { error: error.response.data.message };
+    }
+
+    return { error: "Erro de rede ou servidor fora do ar." };
   }
 };
 

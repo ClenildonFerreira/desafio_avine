@@ -23,15 +23,15 @@ const AddTask = () => {
     setFormError(null);
 
     const selectedDate = new Date(dueDate);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
 
-    if (selectedDate <= today) {
+    if (selectedDate <= now) {
       setFormError("Não é possível agendar tarefas com data de hoje ou anterior.");
       return;
     }
 
-    const dueDateUtc = new Date(`${dueDate}T23:59:59`).toISOString();
+    const dueDateUtc = new Date(dueDate).toISOString();
 
     const result = await handleAddTodo({
       title,
@@ -97,7 +97,7 @@ const AddTask = () => {
             {error && <p className="text-red-500">{error}</p>}
             {formError && <p className="text-red-500 text-sm">{formError}</p>}
 
-            <button type="submit" className="btn btn-secondary mt-4" disabled={loading}>
+            <button type="submit" className="btn btn-primary mt-4" disabled={loading}>
               {loading ? "Enviando..." : "Enviar"}
             </button>
           </div>

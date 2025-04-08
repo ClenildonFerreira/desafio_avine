@@ -14,7 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
         new MySqlServerVersion(new Version(8, 0, 41))));
 
-builder.Services.AddScoped<TaskRepository>();
+builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

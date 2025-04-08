@@ -5,7 +5,7 @@ using TaskManagerApi.Models;
 
 namespace TaskManagerApi.Repositories
 {
-    public class TaskRepository
+    public class TaskRepository : ITaskRepository
     {
         private readonly AppDbContext _context;
 

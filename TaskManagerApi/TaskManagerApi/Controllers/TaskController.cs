@@ -9,10 +9,10 @@ namespace TaskManagerApi.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
-        private readonly TaskRepository _taskRepository;
+        private readonly ITaskRepository _taskRepository;
         private readonly ILogger<TaskController> _logger;
 
-        public TaskController(TaskRepository taskRepository, ILogger<TaskController> logger)
+        public TaskController(ITaskRepository taskRepository, ILogger<TaskController> logger)
         {
             _taskRepository = taskRepository;
             _logger = logger;
@@ -48,19 +48,19 @@ namespace TaskManagerApi.Controllers
             if (string.IsNullOrWhiteSpace(task.Title))
             {
                 _logger.LogWarning("Tentativa de criar tarefa com título vazio.");
-                return BadRequest("O título da tarefa não pode estar vazio.");
+                return BadRequest(new { message = "O título da tarefa não pode estar vazio." });
             }
 
             if (task.DueDate < DateTime.Now)
             {
                 _logger.LogWarning("Tentativa de criar tarefa com data de vencimento no passado.");
-                return BadRequest("A data de vencimento não pode ser no passado.");
+                return BadRequest(new { message = "A data de vencimento não pode ser no passado." });
             }
 
             if (await _taskRepository.TaskTitleExistsAsync(task.Title))
             {
                 _logger.LogWarning("Tentativa de criar tarefa com título duplicado: {Title}", task.Title);
-                return BadRequest("Já existe uma tarefa com esse título.");
+                return BadRequest(new { message = "Já existe uma tarefa com esse título." });
             }
 
             await _taskRepository.AddTask(task);
@@ -75,13 +75,13 @@ namespace TaskManagerApi.Controllers
             if (existingTask == null)
             {
                 _logger.LogWarning("Tentativa de atualizar tarefa com ID {TaskId} não encontrada", id);
-                return NotFound();
+                return NotFound(new { message = "Tarefa não encontrada." });
             }
 
             if (await _taskRepository.TaskTitleExistsAsync(task.Title) && task.Title != existingTask.Title)
             {
                 _logger.LogWarning("Tentativa de atualizar tarefa com título duplicado: {Title}", task.Title);
-                return BadRequest("Já existe uma tarefa com esse título.");
+                return BadRequest(new { message = "Já existe uma tarefa com esse título." });
             }
 
             existingTask.Title = task.Title ?? existingTask.Title;
@@ -104,4 +104,3 @@ namespace TaskManagerApi.Controllers
         }
     }
 }
-

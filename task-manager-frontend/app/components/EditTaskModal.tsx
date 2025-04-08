@@ -51,13 +51,16 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
       return;
     }
 
+    const horaAtual = new Date().toTimeString().split(" ")[0];
+    const dataComHora = new Date(`${dueDate}T${horaAtual}`).toISOString();
+
     setFormError(null);
 
     onSave({
       ...task,
       title,
       description,
-      dueDate: new Date(`${dueDate}T23:59:59`).toISOString(),
+      dueDate: dataComHora,
       isCompleted,
     });
 

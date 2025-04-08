@@ -4,6 +4,8 @@ import { useState } from "react";
 import { CreateTaskDTO, ITask } from "@/types/task";
 import { addTodo } from "@/api";
 
+type AddTodoResponse = ITask | { error: string };
+
 export const useAddTodo = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -13,15 +15,17 @@ export const useAddTodo = () => {
     setError(null);
 
     try {
-      const result = await addTodo(task);
-      if (!result) {
-        setError("Falha ao criar tarefa.");
-      }
-      return result;
-    } catch (err) {
-        console.error(err);
-        setError("Erro desconhecido.");
+      const result: AddTodoResponse = await addTodo(task);
+
+      if ("error" in result) {
+        setError(result.error);
         return null;
+      }
+
+      return result;
+    } catch{
+      setError("Erro desconhecido.");
+      return null;
     } finally {
       setLoading(false);
     }
